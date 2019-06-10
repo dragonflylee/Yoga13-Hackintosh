@@ -14,7 +14,11 @@
 			<dict>
 				<key>FixHDA</key>
 				<true/>
+				<key>FixTMR</key>
+				<true/>
 				<key>FixHPET</key>
+				<true/>
+				<key>FixIPIC</key>
 				<true/>
 				<key>AddPNLF</key>
 				<true/>
@@ -47,13 +51,15 @@
 		<key>SSDT</key>
 		<dict>
 			<key>DropOem</key>
-			<false/>
+			<true/>
 			<key>Generate</key>
 			<dict>
 				<key>CStates</key>
 				<true/>
 				<key>PStates</key>
 				<true/>
+				<key>PluginType</key>
+				<integer>1</integer>
 			</dict>
 		</dict>
 		<key>SortedOrder</key>
@@ -65,7 +71,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>kext-dev-mode=1 dart=0</string>
+		<string>kext-dev-mode=1 dart=0 slide=0 -cdfon</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>Timeout</key>
@@ -94,7 +100,6 @@
 		<array>
 			<string>BOOTX64.EFI</string>
 			<string>Windows_OS</string>
-			<string>Recovery</string>
 			<string>Preboot</string>
 		</array>
 		<key>Language</key>
@@ -107,6 +112,40 @@
 			<false/>
 			<key>Tool</key>
 			<false/>
+		</dict>
+		<key>#Custom</key>
+		<dict>
+			<key>Entries</key>
+			<array>
+				<dict>
+					<key>Hidden</key>
+					<false/>
+					<key>Title</key>
+					<string>Ubuntu</string>
+					<key>Arguments</key>
+					<string>initrd=/efi/Ubuntu/initrd file=/cdrom/preseed/ubuntu.seed boot=casper quiet splash iso-scan/filename=/ubuntu-19.04-desktop-amd64.iso locale=zh_CN.UTF-8 --</string>
+					<key>Path</key>
+					<string>\efi\Ubuntu\vmlinuz</string>
+					<key>Image</key>
+					<string>ubuntu</string>
+					<key>Type</key>
+					<string>Linux</string>
+				</dict>
+				<dict>
+					<key>Hidden</key>
+					<false/>
+					<key>Title</key>
+					<string>PhoenixOS</string>
+					<key>Arguments</key>
+					<string>initrd=/efi/PhoenixOS/initrd.img quiet root=/dev/ram0 androidboot.hardware=android_x86 SRC=/PhoenixOS vga=788</string>
+					<key>Path</key>
+					<string>\efi\PhoenixOS\kernel</string>
+					<key>Image</key>
+					<string>phoenix</string>
+					<key>Type</key>
+					<string>Linux</string>
+				</dict>
+			</array>
 		</dict>
 		<key>Theme</key>
 		<string>minimalism</string>
@@ -125,7 +164,7 @@
 	<dict>
 		<key>AppleRTC</key>
 		<true/>
-		<key>KernelXCPM</key>
+		<key>AppleIntelCPUPM</key>
 		<true/>
 		<key>KextsToPatch</key>
 		<array>

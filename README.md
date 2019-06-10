@@ -17,7 +17,7 @@
 
 * 英特尔核显 HD4000 `ig-platform-id` 注入 `0x10660004` 驱动 [WhateverGreen.kext](https://github.com/acidanthera/WhateverGreen/releases/latest) 亮度可调节 
 * 声卡 Conexant CX20590 注入 Layout `12` 驱动 [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases/latest)
-* 触摸板键盘 [VoodooPS2Controller.kext](https://github.com/alexandred/VoodooI2C/releases/latest) 触摸板已配置三指，默认为切换Ctrl+方向键. 
+* 触摸板键盘 [VoodooPS2Controller.kext](https://bitbucket.org/RehabMan/os-x-voodoo-ps2-controller/downloads/) 触摸板已配置三指，默认为切换Ctrl+方向键. 
 * 电池与CPU监控 [VirtualSMC.kext](https://github.com/acidanthera/VirtualSMC/releases/latest). 
 * USB3.0 驱动 [USBInjectAll.kext](https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads), DSDT加入 usb_7-series-multiplex 实现USB2.0/3.0自动切换
 * 网卡内建 [NullEthernet.kext](https://bitbucket.org/RehabMan/os-x-null-ethernet/downloads) 仿冒PCI网卡
