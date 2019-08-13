@@ -113,39 +113,6 @@
 			<key>Tool</key>
 			<false/>
 		</dict>
-		<key>#Custom</key>
-		<dict>
-			<key>Entries</key>
-			<array>
-				<dict>
-					<key>Hidden</key>
-					<false/>
-					<key>Title</key>
-					<string>Ubuntu</string>
-					<key>Arguments</key>
-					<string>initrd=/efi/Ubuntu/initrd file=/cdrom/preseed/ubuntu.seed boot=casper quiet splash iso-scan/filename=/ubuntu-19.04-desktop-amd64.iso locale=zh_CN.UTF-8 --</string>
-					<key>Path</key>
-					<string>\efi\Ubuntu\vmlinuz</string>
-					<key>Image</key>
-					<string>ubuntu</string>
-					<key>Type</key>
-					<string>Linux</string>
-				</dict>
-				<dict>
-					<key>Hidden</key>
-					<false/>
-					<key>Title</key>
-					<string>PhoenixOS</string>
-					<key>Arguments</key>
-					<string>initrd=/efi/PhoenixOS/initrd.img quiet root=/dev/ram0 androidboot.hardware=android_x86 SRC=/PhoenixOS vga=788</string>
-					<key>Path</key>
-					<string>\efi\PhoenixOS\kernel</string>
-					<key>Image</key>
-					<string>phoenix</string>
-					<key>Type</key>
-					<string>Linux</string>
-				</dict>
-			</array>
 		</dict>
 		<key>Theme</key>
 		<string>minimalism</string>
@@ -168,6 +135,56 @@
 		<true/>
 		<key>KextsToPatch</key>
 		<array>
+			<dict>
+				<key>Comment</key>
+				<string>HDMI-video, 64MB BIOS, HD4000 0x01660004 #1 of 2</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelFramebufferCapri</string>
+				<key>Find</key>
+				<data>BABmAQEDAQEAAAAC</data>
+				<key>Replace</key>
+				<data>BABmAQECBAIAAAAE</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>HDMI-video, 64MB BIOS, HD4000 0x01660004 #2 of 2</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelFramebufferCapri</string>
+				<key>Find</key>
+				<data>MAIAAAAAAAABAAAAQAAAAAAAAAABAAAAQAAAAAAAAAABAAAAQAAAAAAAAAAAAAAA</data>
+				<key>Replace</key>
+				<data>MAIAAAIFAAAABAAABwQAAAMEAAAABAAAgQAAAAQGAAAABAAAgQAAAAAAAAAAAgAR</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>HDMI-audio HD4000 0x01660004, port 0205</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelFramebufferCapri</string>
+				<key>Find</key>
+				<data>AgUAAAAEAAAHBAAA</data>
+				<key>Replace</key>
+				<data>AgUAAAAIAAAGAAAA</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>HDMI-audio HD4000 0x01660004, port 0304</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelFramebufferCapri</string>
+				<key>Find</key>
+				<data>AwQAAAAEAACBAAAA</data>
+				<key>Replace</key>
+				<data>AwQAAAAIAAAGAAAA</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>HDMI-audio HD4000 0x01660004, port 0406</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelFramebufferCapri</string>
+				<key>Find</key>
+				<data>BAYAAAAEAACBAAAA</data>
+				<key>Replace</key>
+				<data>BAYAAAAIAAAGAAAA</data>
+			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>Enable TRIM for SSD</string>
